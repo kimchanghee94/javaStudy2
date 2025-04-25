@@ -1,12 +1,12 @@
-import 완전범죄.FullCrime;
+import 완전범죄.Solution;
 
 public class Main {
 
     public static void main(String[] args) {
-        FullCrime fc = new FullCrime();
+        Solution sol = new Solution();
 
-        int[][] input = new int[][]{{1, 2}, {2, 3}};
+        int[][] input = new int[][]{{3, 3}, {3, 3}};
 
-        System.out.println(fc.solution(input,4,4));
+        System.out.println(sol.solution(input,7,1));
     }
 }
