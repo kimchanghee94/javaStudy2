@@ -1,18 +1,17 @@
-import 비밀코드해독.Solution;
+import 유연근무제.Solution;
 
 public class Main {
 
     public static void main(String[] args) {
         Solution sol = new Solution();
 
-        int[][] q = new int[][]{
-                {1, 2, 3, 4, 5},
-                {6, 7, 8, 9, 10},
-                {3, 7, 8, 9, 10},
-                {2, 5, 7, 9, 10},
-                {3, 4, 5, 6, 7}};
-        int[] ans = new int[]{2, 3, 4, 3, 3};
+        int[] schedules = {700, 800, 1100};
+        int[][] timelogs = {
+                {710, 2359, 1050, 700, 650, 631, 659},
+                {800, 801, 805, 800, 759, 810, 809},
+                {1105, 1001, 1002, 600, 1059, 1001, 1100}
+        };
 
-        System.out.println(sol.solution(10, q, ans));
+        System.out.println(sol.solution(schedules, timelogs, 5));
     }
 }
