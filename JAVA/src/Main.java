@@ -1,4 +1,4 @@
-import 택배상자꺼내기.Solution;
+import 지게차와크레인.Solution;
 
 public class Main {
 
@@ -7,7 +7,9 @@ public class Main {
 
 //        int[][] input = new int[]{{},{}};
 //        int[] input = new int[]{};
+        String[] a = new String[]{"AZWQY", "CAABX", "BBDDA", "ACACA"};
+        String[] b = new String[]{"A", "BB", "A"};
 
-        System.out.println(sol.solution(100,1,6));
+        System.out.println(sol.solution(a,b));
     }
 }
