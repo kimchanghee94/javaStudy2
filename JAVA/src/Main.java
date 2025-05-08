@@ -5,19 +5,19 @@ public class Main {
     public static void main(String[] args) {
         Solution sol = new Solution();
 
-        int[][] arr1 = {
+        int[][] points = {
                 {3, 2},
                 {6, 4},
                 {4, 7},
                 {1, 4}
         };
 
-        int[][] arr2 = {
+        int[][] routes = {
                 {4, 2},
                 {1, 3},
                 {2, 4}
         };
 
-        System.out.println(sol.solution(arr1, arr2));
+        System.out.println(sol.solution(points, routes));
     }
 }
