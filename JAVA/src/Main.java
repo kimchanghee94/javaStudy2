@@ -1,23 +1,13 @@
-import 충돌위험찾기.Solution;
+import 지폐접기.Solution;
 
 public class Main {
 
     public static void main(String[] args) {
         Solution sol = new Solution();
 
-        int[][] points = {
-                {3, 2},
-                {6, 4},
-                {4, 7},
-                {1, 4}
-        };
+        int[] wallet = {30, 15};
+        int[] bill = {26, 17};
 
-        int[][] routes = {
-                {4, 2},
-                {1, 3},
-                {2, 4}
-        };
-
-        System.out.println(sol.solution(points, routes));
+        System.out.println(sol.solution(wallet, bill));
     }
 }
