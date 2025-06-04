@@ -1,4 +1,6 @@
-public class ZigzaggConversion {
+package ZigZagConversion;
+
+public class Solution {
     public String convert(String s, int numRows) {
         StringBuilder ans = new StringBuilder();
 

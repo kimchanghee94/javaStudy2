@@ -1,4 +1,6 @@
-public class RomanToInteger {
+package RomanToInteger;
+
+public class Solution {
     public int romanToInt(String s) {
         int answer = 0;
 
