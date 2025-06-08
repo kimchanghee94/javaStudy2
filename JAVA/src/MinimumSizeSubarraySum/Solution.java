@@ -3,23 +3,15 @@ package MinimumSizeSubarraySum;
 public class Solution {
     public int minSubArrayLen(int target, int[] nums) {
         int ans = Integer.MAX_VALUE;
+        int total = 0, left = 0;
 
-        int fir=0, sec=0;
-        int total = nums[fir];
+        for(int i=0; i<nums.length; i++){
+            total += nums[i];
 
-        while(sec < nums.length && fir <= sec){
-            if(total < target){
-                if(sec+1 == nums.length){
-                    break;
-                }else{
-                    sec++;
-                    total += nums[sec];
-                }
-            }else{
-                total-=nums[fir];
-                ans = Math.min(ans, sec-fir+1);
-
-                fir++;
+            while(total >= target){
+                ans = Math.min(ans, i-left+1);
+                total -= nums[left];
+                left++;
             }
         }
 
