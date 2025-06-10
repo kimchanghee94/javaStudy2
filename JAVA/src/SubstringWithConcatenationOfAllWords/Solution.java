@@ -5,23 +5,41 @@ import java.util.*;
 public class Solution {
     public List<Integer> findSubstring(String s, String[] words) {
         List<Integer> ans = new ArrayList<>();
-        Map<String, Integer> flag = new HashMap<>();
-        Map<String, Integer> tmpFlag = new HashMap<>();
+        Map<String, Integer> wordsMap = new HashMap<>();
 
-        int left = 0;
-        int len = words[0].length();
-        int totLen = words.length;
+        int wordLen = words[0].length();
+        int totCnt = words.length;
 
-        for(int i=0; i<words.length; i++){
-            flag.put(words[i], flag.getOrDefault(words[i], 0) + 1);
+        for(String word : words){
+            wordsMap.put(word, wordsMap.getOrDefault(word, 0) + 1);
         }
 
-        for(int i=0; i<s.length(); i++){
-            if((i+1)%len == 0){
-                String tmp = s.substring(left, i+1);
+        for(int i=0; i<wordLen; i++){
+            int left = i;
+            int cnt = 0;
+            Map<String, Integer> slide = new HashMap<>();
 
-                if(flag.containsKey(tmp)){
+            for(int j=i; j<=s.length()-wordLen; j+=wordLen){
+                String word = s.substring(j, j+wordLen);
 
+                if(wordsMap.containsKey(word)){
+                    slide.put(word, slide.getOrDefault(word, 0) + 1);
+                    cnt++;
+
+                    while(wordsMap.get(word) < slide.get(word)){
+                        String leftWord = s.substring(left, left+wordLen);
+                        slide.put(leftWord, slide.get(leftWord) - 1);
+                        left += wordLen;
+                        cnt--;
+                    }
+
+                    if(cnt == totCnt){
+                        ans.add(left);
+                    }
+                }else{
+                    slide.clear();
+                    cnt=0;
+                    left = j+wordLen;
                 }
             }
         }
