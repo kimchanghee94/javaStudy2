@@ -6,31 +6,24 @@ public class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> ans = new ArrayList<>();
 
-        int dir = 0, cnt = 1;
-        int h = matrix.length, w = matrix[0].length;
-        int fi = 0, fj = 0;
-        int[] di = new int[]{0,1,0,-1};
-        int[] dj = new int[]{1,0,-1,0};
+        int left=0, right=matrix[0].length-1;
+        int top=0, bottom=matrix.length-1;
 
-        int[][] flag = new int[h][w];
-        ans.add(matrix[fi][fj]);
-        flag[fi][fj] = 1;
+        while(left <= right && top <= bottom){
+            for(int i=left; i<=right; i++) ans.add(matrix[top][i]);
+            top++;
 
-        while(true){
-            int ni = fi + di[dir];
-            int nj = fj + dj[dir];
+            for(int i=top; i<=bottom; i++) ans.add(matrix[i][right]);
+            right--;
 
-            if(cnt == h*w) break;
-
-            if(ni<0 || ni>h-1 || nj<0 || nj>w-1 || flag[ni][nj] == 1){
-                dir = (dir+1)%4;
+            if(top<=bottom){
+                for(int i=right; i>=left; i--) ans.add(matrix[bottom][i]);
+                bottom--;
             }
-            else{
-                cnt++;
-                fi = ni;
-                fj = nj;
-                flag[ni][nj] = 1;
-                ans.add(matrix[ni][nj]);
+
+            if(left<=right){
+                for(int i=bottom; i>=top; i--) ans.add(matrix[i][left]);
+                left++;
             }
         }
 
