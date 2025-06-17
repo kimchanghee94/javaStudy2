@@ -1,4 +1,4 @@
-import TextJustification.Solution;
+import MergeIntervals.Solution;
 
 public class Main {
 
@@ -6,9 +6,6 @@ public class Main {
         Solution sol = new Solution();
 
         System.out.println(
-                sol.fullJustify(
-                        new String[]{"This", "is", "an", "example",
-                                "of", "text", "justification."}
-                , 16));
+                sol.merge(new int[][]{{1,3},{2,6},{8,10},{15,18}}));
     }
 }
