@@ -13,3 +13,16 @@ public class Solution {
         return ans;
     }
 }
+
+/*
+class Solution {
+    public int majorityElement(int[] nums) {
+        int ans=0, sum=0;
+        for(int num:nums){
+            if(sum==0) ans=num;
+            sum += (ans==num) ? 1:-1;
+        }
+        return ans;
+    }
+}
+*/
