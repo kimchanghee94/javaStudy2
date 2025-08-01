@@ -21,17 +21,8 @@ public class Solution {
 /*
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int k=1, dup=0;
-        for(int i=1; i<nums.length; i++){
-            if(nums[i-1]!=nums[i]) {
-                nums[k++]=nums[i];
-                dup=0;
-            }
-            else if(nums[i-1]==nums[i] && dup<1){
-                nums[k++]=nums[i];
-                dup++;
-            }
-        }
+        int k=0;
+        for(int num : nums) if(k<2 || nums[k-2]!=num) nums[k++]=num;
         return k;
     }
 }
