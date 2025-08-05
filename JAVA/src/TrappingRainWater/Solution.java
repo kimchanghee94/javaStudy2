@@ -28,3 +28,23 @@ public class Solution {
         return answer;
     }
 }
+
+/*
+class Solution {
+    public int trap(int[] height) {
+        int n=height.length,ans=0,left=0,right=n-1,lH=height[left],rH=height[right];
+        while(left<right){
+            if(height[left]<height[right]){
+                if(lH<height[left]) lH=height[left];
+                else ans+=lH-height[left];
+                left++;
+            }else{
+                if(rH<height[right]) rH=height[right];
+                else ans+=rH-height[right];
+                right--;
+            }
+        }
+        return ans;
+    }
+}
+*/
