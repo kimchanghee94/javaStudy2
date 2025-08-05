@@ -43,3 +43,44 @@ public class Solution {
         return arr.get(ran);
     }
 }
+
+/*
+class RandomizedSet {
+    List<Integer> arr;
+    Map<Integer, Integer> map;
+
+    public RandomizedSet() {
+        this.arr = new ArrayList<>();
+        this.map = new HashMap<>();
+    }
+
+    public boolean insert(int val) {
+        if(map.containsKey(val)) return false;
+        else{
+            arr.add(val);
+            map.put(val, arr.size()-1);
+            return true;
+        }
+    }
+
+    public boolean remove(int val) {
+        if(!map.containsKey(val)) return false;
+        else{
+            int dIdx = map.get(val);
+            int lVal = arr.get(arr.size()-1);
+
+            arr.set(dIdx, lVal);
+            map.put(lVal, dIdx);
+
+            arr.remove(arr.size()-1);
+            map.remove(val);
+
+            return true;
+        }
+    }
+
+    public int getRandom() {
+        return arr.get((int)(Math.random()*arr.size()));
+    }
+}
+*/
