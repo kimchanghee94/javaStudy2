@@ -30,3 +30,23 @@ public class Solution {
         return ans.toString();
     }
 }
+
+/*
+class Solution {
+    public String convert(String s, int numRows) {
+        if(numRows==1) return s;
+        StringBuilder ans = new StringBuilder();
+        StringBuilder[] rows = new StringBuilder[numRows];
+        for(int i=0; i<numRows; i++) rows[i]=new StringBuilder();
+        int cur=0;
+        boolean dir=false;
+        for(char c : s.toCharArray()){
+            rows[cur].append(c);
+            if(cur==0 || cur==numRows-1) dir=!dir;
+            cur+=dir?1:-1;
+        }
+        for(StringBuilder sb : rows) ans.append(sb);
+        return ans.toString();
+    }
+}
+*/
