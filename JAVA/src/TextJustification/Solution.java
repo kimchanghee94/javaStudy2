@@ -66,3 +66,49 @@ public class Solution {
         return ans;
     }
 }
+
+/*
+class Solution {
+    public List<String> fullJustify(String[] words, int maxWidth) {
+        List<String> ans = new ArrayList<>();
+        int idx=0;
+
+        while(idx < words.length){
+            int totalChars = words[idx].length();
+            int last = idx+1;
+
+            while(last < words.length){
+                if(totalChars+1+words[last].length()>maxWidth) break;
+                totalChars+= 1+words[last].length();
+                last++;
+            }
+
+            int wordCount = last-idx;
+            StringBuilder line = new StringBuilder();
+            if(last == words.length || wordCount ==1){
+                for(int i=idx; i<last; i++){
+                    line.append(words[i]);
+                    if(i != last -1) line.append(" ");
+                }
+                int remaining = maxWidth - line.length();
+                for(int i=0; i<remaining; i++) line.append(" ");
+            }else{
+                int tot = maxWidth-(totalChars-(wordCount-1));
+                int gap = tot / (wordCount-1);
+                int extra = tot % (wordCount-1);
+
+                for(int i=idx;i<last;i++){
+                    line.append(words[i]);
+                    if(i!=last-1){
+                        for(int s=0; s<gap; s++) line.append(" ");
+                        if(extra-- > 0) line.append(" ");
+                    }
+                }
+            }
+            ans.add(line.toString());
+            idx=last;
+        }
+        return ans;
+    }
+}
+*/
