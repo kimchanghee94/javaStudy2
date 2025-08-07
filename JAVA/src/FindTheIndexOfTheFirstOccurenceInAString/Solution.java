@@ -5,3 +5,11 @@ public class Solution {
         return haystack.indexOf(needle);
     }
 }
+
+/*
+class Solution {
+    public int strStr(String haystack, String needle) {
+        return haystack.indexOf(needle);
+    }
+}
+*/
