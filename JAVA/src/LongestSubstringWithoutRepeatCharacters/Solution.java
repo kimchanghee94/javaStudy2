@@ -1,7 +1,5 @@
 package LongestSubstringWithoutRepeatCharacters;
 
-import java.util.*;
-
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
         int[] flag = new int[128];
@@ -23,3 +21,18 @@ public class Solution {
         return ans;
     }
 }
+
+/*
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        boolean[] flag = new boolean[128];
+        int ans=0, l=0;
+        for(int i=0; i<s.length(); i++){
+            while(flag[s.charAt(i)]) flag[s.charAt(l++)] = false;
+            ans=Math.max(ans, i-l+1);
+            flag[s.charAt(i)]=true;
+        }
+        return ans;
+    }
+}
+*/
