@@ -45,3 +45,28 @@ public class Solution {
         return minLen == Integer.MAX_VALUE ? "" : s.substring(strt, strt+minLen);
     }
 }
+
+/*
+class Solution {
+    public String minWindow(String s, String t) {
+        int tLen=t.length(),l=0,strt=0,minLen=Integer.MAX_VALUE;
+        int[] map = new int[128];
+        for(char c : t.toCharArray()) map[c]++;
+        for(int r=0; r<s.length(); r++){
+            char cr = s.charAt(r);
+            if(map[cr]-->0) tLen--;
+
+            while(tLen==0){
+                if(r-l+1<minLen){
+                    minLen=r-l+1;
+                    strt=l;
+                }
+                char cl=s.charAt(l);
+                if(++map[cl]>0) tLen++;
+                l++;
+            }
+        }
+        return minLen == Integer.MAX_VALUE ? "" : s.substring(strt, strt+minLen);
+    }
+}
+*/
