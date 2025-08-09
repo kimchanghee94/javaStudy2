@@ -47,3 +47,39 @@ public class Solution {
         return ans;
     }
 }
+
+/*
+class Solution {
+    public List<Integer> findSubstring(String s, String[] words) {
+        List<Integer> ans = new ArrayList<>();
+        int tLen = words.length, wLen = words[0].length();
+        Map<String, Integer> map = new HashMap<>();
+        for(String word : words) map.put(word, map.getOrDefault(word, 0) + 1);
+        for(int i=0; i<wLen; i++){
+            int left=i, cnt=0;
+            Map<String, Integer> slide = new HashMap<>();
+            for(int j=i; j<=s.length()-wLen; j+=wLen){
+                String word = s.substring(j,j+wLen);
+                if(map.containsKey(word)){
+                    slide.put(word, slide.getOrDefault(word, 0) + 1);
+                    cnt++;
+
+                    while(map.get(word) < slide.get(word)){
+                        String lWord = s.substring(left, left+wLen);
+                        slide.put(lWord, slide.get(lWord)-1);
+                        left+=wLen;
+                        cnt--;
+                    }
+
+                    if(cnt==tLen) ans.add(left);
+                }else{
+                    slide.clear();
+                    left=j+wLen;
+                    cnt=0;
+                }
+            }
+        }
+        return ans;
+    }
+}
+*/
