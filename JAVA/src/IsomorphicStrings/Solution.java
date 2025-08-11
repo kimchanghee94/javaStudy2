@@ -17,3 +17,19 @@ public class Solution {
         return true;
     }
 }
+/*
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        char[] sArr=new char[128], tArr=new char[128];
+        for(int i=0; i<s.length(); i++){
+            char sc=s.charAt(i), tc=t.charAt(i);
+            if(sArr[sc]==0 && tArr[tc]==0){
+                sArr[sc]=tc;
+                tArr[tc]=sc;
+            }
+            else if(sArr[sc]!=tc || tArr[tc]!=sc) return false;
+        }
+        return true;
+    }
+}
+*/
