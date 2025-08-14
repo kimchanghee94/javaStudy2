@@ -21,3 +21,23 @@ public class Solution {
         return s.pop();
     }
 }
+
+/*
+class Solution {
+    public int evalRPN(String[] tokens) {
+        Stack<Integer> s=new Stack<>();
+        for(String token : tokens){
+            if(token.equals("+")||token.equals("-")||token.equals("*")||token.equals("/")){
+                int num2=s.pop(), num1=s.pop();
+                switch(token){
+                    case "+"->s.push(num1+num2);
+                    case "-"->s.push(num1-num2);
+                    case "*"->s.push(num1*num2);
+                    case "/"->s.push(num1/num2);
+                }
+            }else s.push(Integer.valueOf(token));
+        }
+        return s.pop();
+    }
+}
+*/
