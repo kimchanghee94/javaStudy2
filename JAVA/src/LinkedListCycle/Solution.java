@@ -1,7 +1,5 @@
 package LinkedListCycle;
 
-import java.util.*;
-
 class ListNode {
     int val;
     ListNode next;
@@ -36,3 +34,18 @@ public class Solution {
         return true;
     }
 }
+
+/*
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if(head==null || head.next==null) return false;
+        ListNode fast=head.next;
+        while(head!=fast){
+            if(fast==null||fast.next==null) return false;
+            head=head.next;
+            fast=fast.next.next;
+        }
+        return true;
+    }
+}
+*/
