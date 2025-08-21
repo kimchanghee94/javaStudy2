@@ -1,7 +1,5 @@
 package CopyListWithRandomPointer;
 
-import java.util.*;
-
 class Node {
     int val;
     Node next;
@@ -64,3 +62,33 @@ public class Solution {
         return dummy.next;
     }
 }
+
+/*
+class Solution {
+    public Node copyRandomList(Node head) {
+        Node cur=head;
+        while(cur!=null){
+            Node tmp = new Node(cur.val);
+            tmp.next=cur.next;
+            cur.next=tmp;
+            cur=tmp.next;
+        }
+        cur=head;
+        while(cur!=null){
+            if(cur.random != null) cur.next.random=cur.random.next;
+            cur=cur.next.next;
+        }
+        Node dummy=new Node(0);
+        Node copy=dummy;
+        cur=head;
+        while(cur!=null){
+            copy.next=cur.next;
+            copy=cur.next;
+
+            cur.next=cur.next.next;
+            cur=cur.next;
+        }
+        return dummy.next;
+    }
+}
+*/
