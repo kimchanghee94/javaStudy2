@@ -35,3 +35,33 @@ public class Solution {
         return dummy.next;
     }
 }
+
+/*
+class Solution {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode dummy = new ListNode();
+        ListNode prev = dummy;
+        prev.next = head;
+
+        while(chk(head, k)){
+            for(int i=0; i<k-1; i++){
+                ListNode next=head.next;
+                head.next=head.next.next;
+                next.next=prev.next;
+                prev.next=next;
+            }
+            prev=head;
+            head=head.next;
+        }
+        return dummy.next;
+    }
+
+    private boolean chk(ListNode head, int k){
+        while(head != null && k>0) {
+            head=head.next;
+            k--;
+        }
+        return k==0;
+    }
+}
+*/
