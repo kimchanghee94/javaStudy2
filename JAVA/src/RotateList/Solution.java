@@ -34,3 +34,30 @@ public class Solution {
         return dummy.next;
     }
 }
+
+/*
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        if(head==null) return head;
+        ListNode dummy = new ListNode(0, head);
+        ListNode prev = dummy;
+        int len=0;
+        while(head != null){
+            len++;
+            if(head.next==null) {
+                head.next=prev.next;
+                break;
+            }
+            head=head.next;
+        }
+        k%=len;
+        head=prev.next;
+        for(int i=0; i<len-k-1; i++) head=head.next;
+        ListNode next = head.next;
+        head.next=null;
+        prev.next=next;
+
+        return dummy.next;
+    }
+}
+*/
