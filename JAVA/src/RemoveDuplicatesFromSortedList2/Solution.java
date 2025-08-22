@@ -26,3 +26,23 @@ public class Solution {
         return dummy.next;
     }
 }
+
+/*
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0, head);
+        ListNode prev = dummy;
+        while(head != null){
+            if(head.next != null && head.val==head.next.val){
+                int val=head.val;
+                while(head != null && head.val==val) head=head.next;
+                prev.next = head;
+            }else{
+                prev=prev.next;
+                head=head.next;
+            }
+        }
+        return dummy.next;
+    }
+}
+*/
