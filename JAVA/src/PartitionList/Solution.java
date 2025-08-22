@@ -36,3 +36,27 @@ public class Solution {
         return dummy.next;
     }
 }
+
+/*
+class Solution {
+    public ListNode partition(ListNode head, int x) {
+        ListNode ld = new ListNode(0), gd = new ListNode(0);
+        ListNode l = ld, g = gd;
+
+        for(ListNode cur = head; cur!=null;){
+            ListNode next = cur.next;
+            cur.next = null;
+            if(cur.val < x){
+                l.next = cur;
+                l=l.next;
+            }else{
+                g.next = cur;
+                g=g.next;
+            }
+            cur=next;
+        }
+        l.next = gd.next;
+        return ld.next;
+    }
+}
+*/
