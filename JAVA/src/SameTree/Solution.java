@@ -25,3 +25,18 @@ public class Solution {
         return true;
     }
 }
+
+/*
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p==null && q==null) return true;
+        if(p==null || q==null) return false;
+        if(p.val != q.val) return false;
+
+        boolean lc = isSameTree(p.left, q.left);
+        boolean rc = isSameTree(p.right, q.right);
+
+        return lc && rc;
+    }
+}
+*/
