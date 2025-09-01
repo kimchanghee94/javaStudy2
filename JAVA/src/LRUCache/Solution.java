@@ -54,3 +54,60 @@ public class Solution {
         tail.prev = node;
     }
 }
+
+/*
+class ListNode{
+    int key, val;
+    ListNode prev,next;
+    public ListNode(){}
+    public ListNode(int key, int val){
+        this.key=key;
+        this.val=val;
+    }
+}
+
+class LRUCache {
+    Map<Integer, ListNode> map;
+    int capa;
+    ListNode head, tail;
+
+    public LRUCache(int capacity) {
+        this.map = new HashMap<>();
+        this.head = new ListNode();
+        this.tail = new ListNode();
+        this.capa=capacity;
+
+        head.next = tail;
+        tail.prev = head;
+    }
+
+    public int get(int key) {
+        if(!map.containsKey(key)) return -1;
+        ListNode node = map.get(key);
+        remove(node);
+        insert(node);
+        return node.val;
+    }
+
+    public void put(int key, int value) {
+        if(map.containsKey(key)) remove(map.get(key));
+        if(map.size() == capa) remove(head.next);
+        insert(new ListNode(key, value));
+    }
+
+    private void remove(ListNode node){
+        map.remove(node.key);
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+    }
+
+    private void insert(ListNode node){
+        map.put(node.key, node);
+        node.next = tail;
+        node.prev = tail.prev;
+        tail.prev.next = node;
+        tail.prev = node;
+    }
+
+}
+*/
