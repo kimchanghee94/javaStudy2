@@ -46,3 +46,29 @@ public class Solution {
         return root;
     }
 }
+
+/*
+class Solution {
+    public Node connect(Node root) {
+        Node cur = root;
+        while(cur != null){
+            Node dummy = new Node();
+            Node tmp = dummy;
+
+            while(cur != null){
+                if(cur.left != null){
+                    tmp.next = cur.left;
+                    tmp = tmp.next;
+                }
+                if(cur.right != null){
+                    tmp.next = cur.right;
+                    tmp = tmp.next;
+                }
+                cur=cur.next;
+            }
+            cur=dummy.next;
+        }
+        return root;
+    }
+}
+*/
