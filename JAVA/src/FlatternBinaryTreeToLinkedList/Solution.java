@@ -29,3 +29,20 @@ public class Solution {
         }
     }
 }
+
+/*
+class Solution {
+    public void flatten(TreeNode root) {
+        while(root!=null){
+            if(root.left!=null){
+                TreeNode right = root.left;
+                while(right.right != null) right=right.right;
+                right.right = root.right;
+                root.right = root.left;
+                root.left=null;
+            }
+            root=root.right;
+        }
+    }
+}
+*/
