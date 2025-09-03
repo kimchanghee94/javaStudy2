@@ -37,3 +37,21 @@ public class Solution {
         return root;
     }
 }
+
+/*
+class Solution {
+    Map<Integer, Integer> map = new HashMap<>();
+    int idx=0;
+
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        for(int i=0; i<inorder.length; i++) map.put(inorder[i], i);
+        return dfs(preorder, 0, preorder.length-1);
+    }
+
+    private TreeNode dfs(int[] pre, int left, int right){
+        if(left > right) return null;
+        int val = pre[idx++], iIdx=map.get(val);
+        return new TreeNode(val, dfs(pre, left, iIdx-1), dfs(pre, iIdx+1, right));
+    }
+}
+*/
