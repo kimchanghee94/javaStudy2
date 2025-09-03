@@ -36,3 +36,24 @@ public class Solution {
         return root;
     }
 }
+
+/*
+class Solution {
+    Map<Integer, Integer> map = new HashMap<>();
+    int idx=0;
+
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        for(int i=0; i<inorder.length; i++) map.put(inorder[i], i);
+        idx=inorder.length-1;
+        return dfs(postorder, 0, idx);
+    }
+
+    private TreeNode dfs(int[] post, int left, int right){
+        if(left>right) return null;
+        int val=post[idx--], iIdx=map.get(val);
+        TreeNode rightNode = dfs(post, iIdx+1, right);
+        TreeNode leftNode = dfs(post, left, iIdx-1);
+        return new TreeNode(val, leftNode, rightNode);
+    }
+}
+*/
