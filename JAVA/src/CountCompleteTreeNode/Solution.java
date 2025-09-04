@@ -30,3 +30,23 @@ public class Solution {
         return height;
     }
 }
+
+/*
+class Solution {
+    public int countNodes(TreeNode root) {
+        if(root==null) return 0;
+        int lH=getH(root.left);
+        int rH=getH(root.right);
+        if(lH==rH) return (1<<lH)+countNodes(root.right);
+        else return (1<<rH)+countNodes(root.left);
+    }
+    private int getH(TreeNode root){
+        int h=0;
+        while(root != null){
+            root=root.left;
+            h++;
+        }
+        return h;
+    }
+}
+*/
