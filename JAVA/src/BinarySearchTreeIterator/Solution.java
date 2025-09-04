@@ -39,3 +39,44 @@ public class Solution {
         return !stack.isEmpty();
     }
 }
+
+/*
+class BSTIterator {
+    class ListNode{
+        int val;
+        ListNode next;
+        ListNode(){}
+        ListNode(int val){
+            this.val=val;
+        }
+    }
+
+    ListNode dummy, cur;
+
+    public BSTIterator(TreeNode root) {
+        dummy = new ListNode();
+        cur = dummy;
+        dfs(root);
+        cur = dummy.next;
+    }
+
+    private void dfs(TreeNode root){
+        if(root==null) return;
+        dfs(root.left);
+        cur.next=new ListNode(root.val);
+        cur=cur.next;
+        dfs(root.right);
+    }
+
+    public int next() {
+        int val = cur.val;
+        cur=cur.next;
+        return val;
+    }
+
+    public boolean hasNext() {
+        if(cur==null) return false;
+        else return true;
+    }
+}
+*/
