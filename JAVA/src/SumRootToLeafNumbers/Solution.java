@@ -33,3 +33,20 @@ class Solution {
         dfs(root.right, sum);
     }
 }
+
+/*
+class Solution {
+    int ans=0;
+    public int sumNumbers(TreeNode root) {
+        dfs(root, 0);
+        return ans;
+    }
+
+    private void dfs(TreeNode root, int sum){
+        if(root==null) return;
+        int val = sum*10+root.val;
+        if(root.left==null && root.right==null) ans+=val;
+        dfs(root.left, val); dfs(root.right, val);
+    }
+}
+*/
