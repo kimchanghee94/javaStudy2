@@ -31,3 +31,22 @@ public class Solution {
         inorder(root.right);
     }
 }
+
+/*
+class Solution {
+    int ans = Integer.MAX_VALUE;
+    TreeNode prev = null;
+    public int getMinimumDifference(TreeNode root) {
+        dfs(root);
+        return ans;
+    }
+
+    private void dfs(TreeNode root){
+        if(root==null) return;
+        dfs(root.left);
+        if(prev!=null) ans=Math.min(ans, root.val-prev.val);
+        prev=root;
+        dfs(root.right);
+    }
+}
+*/
