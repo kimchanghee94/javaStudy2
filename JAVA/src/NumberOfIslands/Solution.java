@@ -34,3 +34,28 @@ public class Solution {
         }
     }
 }
+
+/*
+class Solution {
+    int[] di=new int[]{1,0,-1,0};
+    int[] dj=new int[]{0,1,0,-1};
+    int M,N;
+    public int numIslands(char[][] grid) {
+        int ans=0;
+        M=grid.length; N=grid[0].length;
+        for(int i=0; i<M; i++) for(int j=0; j<N; j++) if(grid[i][j]=='1') {
+            dfs(grid, i,j);
+            ans++;
+        }
+        return ans;
+    }
+    private void dfs(char[][] grid, int si, int sj){
+        grid[si][sj]='0';
+        for(int d=0; d<4; d++){
+            int ni=si+di[d], nj=sj+dj[d];
+            if(ni<0||nj<0||ni>=M||nj>=N||grid[ni][nj]=='0') continue;
+            dfs(grid, ni, nj);
+        }
+    }
+}
+*/
