@@ -35,3 +35,17 @@ public class Solution {
         return copy;
     }
 }
+
+/*
+class Solution {
+    Node flag[] = new Node[105];
+    public Node cloneGraph(Node node) {
+        if(node==null) return node;
+        if(flag[node.val]!=null) return flag[node.val];
+        Node copy=new Node(node.val);
+        flag[copy.val]=copy;
+        for(Node neighbor : node.neighbors) copy.neighbors.add(cloneGraph(neighbor));
+        return copy;
+    }
+}
+*/
