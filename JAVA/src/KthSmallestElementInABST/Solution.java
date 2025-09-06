@@ -29,3 +29,21 @@ public class Solution {
         inorder(root.right);
     }
 }
+
+/*
+class Solution {
+    int ans=0;
+    int cnt=0;
+    public int kthSmallest(TreeNode root, int k) {
+        cnt=k;
+        inorder(root);
+        return ans;
+    }
+    private void inorder(TreeNode root){
+        if(root==null) return;
+        inorder(root.left);
+        if(--cnt==0) ans=root.val;
+        inorder(root.right);
+    }
+}
+*/
