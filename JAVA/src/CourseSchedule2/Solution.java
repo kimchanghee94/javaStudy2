@@ -29,3 +29,30 @@ public class Solution {
         return false;
     }
 }
+
+/*
+class Solution {
+    int flag[];
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+        int[] ans = new int[numCourses];
+        flag = new int[numCourses];
+
+        for(int[] pre : prerequisites) graph.computeIfAbsent(pre[1], k->new ArrayList<>()).add(pre[0]);
+        List<Integer> tmp = new ArrayList<>();
+        for(int i=0; i<numCourses; i++) if(cycle(graph, i, tmp)) return new int[]{};
+        for(int i=0; i<tmp.size(); i++) ans[i]=tmp.get(tmp.size()-i-1);
+        return ans;
+    }
+
+    private boolean cycle(Map<Integer, List<Integer>> graph, int strt, List<Integer> tmp){
+        if(flag[strt]==1) return true;
+        if(flag[strt]==2) return false;
+        flag[strt]=1;
+        if(graph.containsKey(strt)) for(int next:graph.get(strt)) if(cycle(graph, next, tmp)) return true;
+        flag[strt]=2;
+        tmp.add(strt);
+        return false;
+    }
+}
+*/
