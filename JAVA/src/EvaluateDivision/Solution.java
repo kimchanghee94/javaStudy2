@@ -45,3 +45,39 @@ public class Solution {
         return -1.0;
     }
 }
+
+/*
+class Solution {
+    Set<String> flag;
+    public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+        double[] ans = new double[queries.size()];
+        Map<String, Map<String, Double>> graph = new HashMap<>();
+        for(int i=0; i<equations.size(); i++){
+            String a = equations.get(i).get(0);
+            String b = equations.get(i).get(1);
+
+            graph.computeIfAbsent(a, k->new HashMap<>()).put(b,values[i]);
+            graph.computeIfAbsent(b, k->new HashMap<>()).put(a,1/values[i]);
+        }
+
+        for(int i=0; i<queries.size(); i++){
+            flag=new HashSet<>();
+            ans[i] = dfs(graph, queries.get(i).get(0), queries.get(i).get(1), 1.0);
+        }
+        return ans;
+    }
+
+    private double dfs(Map<String, Map<String, Double>> graph, String a, String b, Double ans){
+        if(!graph.containsKey(a)) return -1.0;
+        if(a.equals(b)) return ans;
+        flag.add(a);
+        for(String neighbor : graph.get(a).keySet()){
+            if(flag.contains(neighbor)) continue;
+            double val = graph.get(a).get(neighbor);
+            double result = dfs(graph, neighbor, b, ans*val);
+            if(result != -1.0) return result;
+        }
+        return -1.0;
+    }
+}
+*/
