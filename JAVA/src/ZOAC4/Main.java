@@ -12,6 +12,7 @@ public class Main {
         int M=Integer.parseInt(st.nextToken())+1;
         int answer=(H/N+1)*(W/M+1);
         bw.write(String.valueOf(answer));
+        br.close();
         bw.close();
     }
 }
