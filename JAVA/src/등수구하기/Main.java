@@ -15,9 +15,7 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             for(;i<=N;i++){
                 int score = Integer.parseInt(st.nextToken());
-                if(score < T) {
-                    break;
-                }
+                if(score < T) break;
                 if(score != T) ans++;
             }
         }
