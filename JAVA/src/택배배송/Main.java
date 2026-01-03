@@ -22,13 +22,13 @@ public class Main {
             board[B].add(new int[]{A,C});
         }
 
-        dijkstra(N,M,board,dist);
+        dijkstra(board,dist);
         bw.write(String.valueOf(dist[N]));
         br.close();
         bw.close();
     }
 
-    private static void dijkstra(int N, int M, List<int[]>[] board, int[] dist){
+    private static void dijkstra(List<int[]>[] board, int[] dist){
         PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->a[0]-b[0]);
         pq.offer(new int[]{0,1});
         dist[1]=0;
