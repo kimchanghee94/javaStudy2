@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    private static int R,C,ans,bitmask;
+    private static int R,C,ans;
     private static char[][] board;
     private static int[][] flag;
     private static final int[] di={1,0,-1,0}, dj={0,1,0,-1};
