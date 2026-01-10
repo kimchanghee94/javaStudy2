@@ -21,32 +21,28 @@ public class Main {
         }
 
         st = new StringTokenizer(br.readLine());
-        int s=Integer.parseInt(st.nextToken());
-        boolean chk=true;
+        int s = Integer.parseInt(st.nextToken());
+        flag[s]=true;
+        dfs(s);
+
+        boolean chk = true;
         for(int i=1;i<M;i++){
-            flag[s]=true;
-            int e=Integer.parseInt(st.nextToken());
-            if(!dfs(s,e)) {
+            s = Integer.parseInt(st.nextToken());
+            if(flag[s]==false){
                 chk=false;
                 break;
             }
-            Arrays.fill(flag,false);
-            s=e;
         }
-
-        if(chk) bw.write("YES");
-        else bw.write("NO");
+        bw.write(chk ? "YES" : "NO");
         br.close();
         bw.close();
     }
 
-    private static boolean dfs(int s, int e){
-        if(s==e) return true;
+    private static void dfs(int s){
         for(int i=1;i<=N;i++){
             if(graph[s][i]==0 || flag[i]) continue;
             flag[i]=true;
-            if(dfs(i,e)) return true;
+            dfs(i);
         }
-        return false;
     }
 }
