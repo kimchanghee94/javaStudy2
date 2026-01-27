@@ -34,20 +34,20 @@ public class Main {
     private static int bfs(int N, List<int[]>[] graph, int k, int v){
         Queue<Integer> q = new LinkedList<>();
         q.offer(v);
-        int[] flag = new int[N+1];
-        flag[v]=Integer.MAX_VALUE;
+        boolean[] flag = new boolean[N+1];
+        flag[v]=true;
+        int ans=0;
         while(!q.isEmpty()){
             int fi = q.poll();
             for(int i=0;i<graph[fi].size();i++){
                 int ni=graph[fi].get(i)[0];
                 int nc=graph[fi].get(i)[1];
-                if(flag[ni]!=0) continue;
-                flag[ni]=Math.min(flag[fi],nc);
+                if(flag[ni] || nc<k) continue;
+                ans++;
+                flag[ni]=true;
                 q.offer(ni);
             }
         }
-        int ans=0;
-        for(int i=1;i<=N;i++) if(i!=v && flag[i]>=k) ans++;
         return ans;
     }
 }
