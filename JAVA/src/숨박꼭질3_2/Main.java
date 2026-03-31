@@ -13,18 +13,20 @@ public class Main {
         int K = Integer.parseInt(st.nextToken());
         int[] flag = new int[MAX];
         flag[N]=1;
-        Queue<Integer> q = new LinkedList<>();
-        q.offer(N);
-        while(!q.isEmpty()){
-            int f=q.poll();
+        Deque<Integer> dq = new ArrayDeque<>();
+        dq.offerLast(N);
+        while(!dq.isEmpty()){
+            int f=dq.pollFirst();
             if(f==K) break;
+
             for(int d=0;d<3;d++){
                 int n=f*di[d]+dj[d];
                 int nc=d==0?flag[f]:flag[f]+1;
                 if(n<0||n>=MAX) continue;
                 if(flag[n]>0 && flag[n]<=nc) continue;
                 flag[n]=nc;
-                q.offer(n);
+                if(d==0) dq.offerFirst(n);
+                else dq.offerLast(n);
             }
         }
 
